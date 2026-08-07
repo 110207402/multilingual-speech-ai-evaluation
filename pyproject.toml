@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multilingual-speech-ai-evaluation"
+version = "0.1.0"
+description = "Sanitized evaluation utilities for multilingual ASR, PII, diarization, and speaker-role workflows"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Hao-Hsuan Chen"}]
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,3 @@
+{"language":"zh-TW","reference":"您好，想確認保單A的繳費狀態","hypothesis":"您好想確認保單A的繳費狀態","reference_pii":[],"predicted_pii":[],"reference_role":"customer","predicted_role":"customer"}
+{"language":"nan-TW","reference":"我欲問保單B敢有繼續有效","hypothesis":"我欲問保單B敢有繼續有效","reference_pii":[],"predicted_pii":[],"reference_role":"customer","predicted_role":"customer"}
+{"language":"zh-TW","reference":"請提供案件編號DEMO-001","hypothesis":"請提供案件編號DEMO-001","reference_pii":["DEMO-001"],"predicted_pii":["DEMO-001"],"reference_role":"agent","predicted_role":"agent"}

@@ -6,7 +6,9 @@ A public, sanitized reconstruction of an enterprise speech-AI proof of concept f
 
 ## What I did
 
-As the primary implementer, I designed the evaluation framework, compared 13 ASR and diarization model configurations across approximately 2,800 experiments, built language-specific metrics, and connected low-confidence cases to a human-review path. The original PoC was developed for an enterprise environment; this repository preserves only the general methodology and reusable evaluation code.
+I built a prototype that turned Mandarin and Taiwanese Hokkien calls into structured transcripts. I used text-to-speech to replay the same words with background speech or echo, then measured which transcription errors changed.
+
+I ran **4,047 case-level evaluations** across streaming ASR, batch ASR, Hokkien benchmarking, PII detection, and diarization and speaker-role assignment. Each evaluation counts a case tested with a particular model, method or configuration. The approximately 2,800 inferences in the earlier write-up covered the first four workstreams. A single recording can contribute to several evaluations.
 
 ## Reported PoC results
 
@@ -14,11 +16,11 @@ As the primary implementer, I designed the evaluation framework, compared 13 ASR
 | --- | ---: |
 | Mandarin ASR | 6.54% character error rate (CER) |
 | Taiwanese Hokkien ASR | 21.78% CER |
-| PII detection | 94.8% recall |
+| PII detection | 94.8% recall vs. 46.7% for an open-source baseline |
 | Speaker diarization | 5.95% diarization error rate (DER) |
-| Agent/customer role assignment | 94.6% accuracy |
+| Agent/customer role assignment | 94.6% accuracy across 37 two-person scenarios |
 
-These are aggregate PoC measurements from synthetic evaluation data. They are not presented as production guarantees. A production decision would require validation on at least 30–50 consented, representative real calls, along with latency, cost, privacy, and failure-mode review.
+Each row reports the result for its own component and evaluation set. The controlled tests included synthetic speech. Performance on live calls would need separate validation using representative, consented recordings. The public examples below demonstrate how the metrics are calculated.
 
 ## Evaluation flow
 
